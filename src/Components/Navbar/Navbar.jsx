@@ -1,6 +1,22 @@
+import { Link, NavLink } from "react-router-dom";
+
 const Navbar = () => {
+  const links = (
+    <>
+      <li>
+        <NavLink to='/'>Home</NavLink>
+      </li>
+      <li>
+        <a>Listed Books</a>
+      </li>
+      <li>
+        <a>Pages to Read</a>
+      </li>
+    </>
+  );
+
   return (
-    <section className="max-w-screen-2xl mx-auto">
+    <section>
       <div className="navbar bg-base-100 mt-5">
         <div className="navbar-start">
           <div className="dropdown">
@@ -24,35 +40,23 @@ const Navbar = () => {
               tabIndex={0}
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
             >
-              <li>
-                <a>Home</a>
-              </li>
-              <li>
-                <a>Listed Books</a>
-              </li>
-              <li>
-                <a>Pages to Read</a>
-              </li>
+              {links}
             </ul>
           </div>
           <a className="btn btn-ghost text-xl">Boi Poka</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
-            <li>
-              <a>Home</a>
-            </li>
-            <li>
-              <a>Listed Books</a>
-            </li>
-            <li>
-              <a>Pages to Read</a>
-            </li>
+            {links}
           </ul>
         </div>
         <div className="navbar-end gap-5">
-          <a className="btn bg-[#23BE0A] hover:bg-[#23BE0A] text-white ">Sign In</a>
-          <a className="btn bg-[#59C6D2] hover:bg-[#59C6D2] text-white">Sign Up</a>
+          <a className="btn bg-[#23BE0A] hover:bg-[#23BE0A] text-white ">
+            Sign In
+          </a>
+          <a className="btn bg-[#59C6D2] hover:bg-[#59C6D2] text-white">
+            Sign Up
+          </a>
         </div>
       </div>
     </section>
